@@ -102,7 +102,7 @@
               <div class="col-md-12">
                 <div class="absolute">
                   <!-- <h4 class="number" data-number="400">0</h4> -->
-                  <h4 class="countNumber number">400</h4>
+                  <h4 class="countNumber number" id="counter400">400</h4>
                   <p>More than a hundred successful projects</p>
                 </div>
                 <div class="text">
@@ -143,7 +143,7 @@
               <div class="col-md-12">
                 <div class="absolute">
                   <!-- <h4 class="number" data-number="21">0</h4> -->
-                  <h4 class="2ountProject number">21</h4>
+                  <h4 class="countProject number" id="counter21">21</h4>
                   <p>Years of Experienced</p>
                 </div>
                 <div class="text">
@@ -1037,6 +1037,34 @@
     <!--! Ends -->
 
     <div class="js-wrapper">
+      <script>function startCounters() {
+        // Counter for 1 to 400
+        let counter400 = document.getElementById("counter400");
+        let count400 = 1;
+        let interval400 = setInterval(() => {
+            counter400.innerText = count400;
+            count400++;
+            if (count400 > 400) {
+                clearInterval(interval400);
+            }
+        }, 5); // Faster interval (5 milliseconds)
+    
+        // Counter for 1 to 21
+        let counter21 = document.getElementById("counter21");
+        let count21 = 1;
+        let interval21 = setInterval(() => {
+            counter21.innerText = count21;
+            count21++;
+            if (count21 > 21) {
+                clearInterval(interval21);
+            }
+        }, 500); // Slower interval (500 milliseconds)
+    }
+    
+    // Call the function to start the counters
+    startCounters();
+    
+    </script>
       <!--! JQuery JS -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.5.2/jquery-migrate.min.js"></script>
